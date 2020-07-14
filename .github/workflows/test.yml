@@ -14,6 +14,6 @@ jobs:
           echo "running"
 
       - name: run without label
-        if: "!contains(github.event.pull_request.labels.*.name , 'no-action')"
+        if: "!contains(github.event.pull_request.labels.*.name , 'no-action') && (github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize')"
         run: |
           echo "running"
