@@ -1,0 +1,14 @@
+name: Github Actions Test
+
+on:
+  pull_request:
+    types: [synchronize, opened, reopened, closed]
+
+jobs:
+  do:
+    name: Github Actions Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: run anytime
+        run: |
+          echo "running"
